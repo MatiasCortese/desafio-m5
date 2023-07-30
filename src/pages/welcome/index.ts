@@ -17,7 +17,7 @@ export function initWelcome(params){
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: url(${fondoImg}]), lightgray 0% 0% / 29.16666567325592px 29.16666567325592px;
+            background: url(${fondoImg}), lightgray 0% 0% / 29.16666567325592px 29.16666567325592px;
             width: 100%;
             height: 100vh;
         }

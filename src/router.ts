@@ -30,7 +30,7 @@ const routes = [
 const BASE_PATH = "/desafio-m5";
 
 function isGithubPages(){
-    return location.host.includes("github.io");
+    return location.host.includes("matiascortese.github.io");
 }
 
 export function initRouter(container: Element) {
@@ -52,7 +52,7 @@ export function initRouter(container: Element) {
             }
         }
     }
-    if (location.pathname == "/" || location.host.includes("github.io")) {
+    if (location.pathname == "/" || location.host.includes("/desafio-m5")) {
         goTo("/welcome");
     } else {
         handleRoute(location.pathname);
