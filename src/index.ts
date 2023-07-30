@@ -10,10 +10,10 @@ import "./components/score"
 import { initRouter } from "./router";
 
 (function(){
+    const container = document.querySelector("#root");
+    initRouter(container as any);
     const localData = JSON.parse(localStorage.getItem("saved-state") as any);
     if (localData) {
         state.initState();
     }
-    const container = document.querySelector("#root");
-    initRouter(container as any);
 })()
