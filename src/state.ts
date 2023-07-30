@@ -28,7 +28,9 @@ const state = {
     },
     initState(){
         const localData = JSON.parse(localStorage.getItem("saved-state") as any);
-        if (localData){
+        if (!localData){
+            return;
+        } else {
             this.setState(localData);
             this.scoreCalculator();
         }

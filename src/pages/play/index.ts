@@ -94,7 +94,6 @@ export function initPlay(params){
 
     function showMoves(computerMove, myMove){
         const result = state.whoWin(myMove, computerMove);
-        console.log(result)
         const computerPlay = document.createElement("move-jugada");
         const myPlay = document.createElement("move-jugada");
         var containerEl = document.querySelector(".container");
