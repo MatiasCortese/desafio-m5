@@ -21,7 +21,7 @@ export function initPlay(params){
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            background: url(${fondoImg}]), lightgray 0% 0% / 29.16666567325592px 29.16666567325592px;
+            background: url(${fondoImg}), lightgray 0% 0% / 29.16666567325592px 29.16666567325592px;
             width: 100%;
             height: 100vh;
         }
