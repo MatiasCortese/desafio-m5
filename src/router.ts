@@ -4,6 +4,8 @@ import { initPlay } from "./pages/play";
 import { initGanaste } from "./pages/result/ganaste";
 import { initPerdiste } from "./pages/result/perdiste";
 
+const BASE_PATH = "/desafio-m5";
+
 const routes = [
     {
         path: /\/welcome/,
@@ -27,7 +29,7 @@ const routes = [
     }
 ];
 
-const BASE_PATH = "/desafio-m5";
+
 
 function isGithubPages(){
     return location.host.includes("github.io");

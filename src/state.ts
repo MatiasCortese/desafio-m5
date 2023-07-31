@@ -26,15 +26,6 @@ const state = {
         this.pushToHistory({computerPlay, myPlay});
         this.whoWin(myPlay, computerPlay);
     },
-    initState(){
-        const localData = JSON.parse(localStorage.getItem("saved-state") as any);
-        if (!localData){
-            return;
-        } else {
-            this.setState(localData);
-            this.scoreCalculator();
-        }
-    },
     setState(newState){
         this.data.history = newState;
         for (const cb of this.listeners) {
@@ -87,7 +78,16 @@ const state = {
                 computerScore: computerScore
             }
         }
-    }
+    },
+    initState(){
+        const localData = JSON.parse(localStorage.getItem("saved-state") as any);
+        if (!localData){
+            return;
+        } else {
+            this.setState(localData);
+            this.scoreCalculator();
+        }
+    },
 };
 
 export {state};
