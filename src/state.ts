@@ -29,10 +29,9 @@ const state = {
     setState(newState){
         this.data.history = newState;
         for (const cb of this.listeners) {
-            console.log("pa saber si entra")
             cb(newState);
-            localStorage.setItem("saved-state", JSON.stringify(newState));
         };
+        localStorage.setItem("saved-state", JSON.stringify(newState));
     },
     pushToHistory(game: Game){
         const currentState = this.getState();
@@ -62,7 +61,9 @@ const state = {
         var myScore = 0;
         var computerScore = 0;
         const localData = localStorage.getItem("saved-state");
-        if(localData) {
+        if(!localData) {
+            return;
+        } else {
             const data = JSON.parse(localData as any);
             data.forEach(juego => {
                 const resultado = this.whoWin(juego.myPlay, juego.computerPlay);

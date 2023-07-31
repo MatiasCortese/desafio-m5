@@ -1,5 +1,5 @@
-import { initRouter } from "./router";
 import { state } from "./state";
+import { initRouter } from "./router";
 import "./components/presentation-text";
 import "./components/countdown"
 import "./components/jugada";
@@ -10,6 +10,7 @@ import "./components/score"
 
 (function(){
     const container = document.querySelector("#root");
-    state.initState();
+    const test = state;
     initRouter(container as any);
+    test.initState();
 })();

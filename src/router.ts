@@ -6,6 +6,10 @@ import { initPerdiste } from "./pages/result/perdiste";
 
 const BASE_PATH = "/desafio-m5";
 
+function isGithubPages(){
+    return location.host.includes("github.io");
+}
+
 const routes = [
     {
         path: /\/welcome/,
@@ -29,12 +33,6 @@ const routes = [
     }
 ];
 
-
-
-function isGithubPages(){
-    return location.host.includes("github.io");
-}
-
 export function initRouter(container: Element) {
     function goTo(path) {
         const completePath = isGithubPages() ? BASE_PATH + path : path;
@@ -54,7 +52,7 @@ export function initRouter(container: Element) {
             }
         }
     }
-    if (location.pathname == "/" || location.host.includes("github.io")) {
+    if (location.pathname == "/" || location.pathname == "/desafio-m5/") {
         goTo("/welcome");
     } else {
         handleRoute(location.pathname);

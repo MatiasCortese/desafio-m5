@@ -93,7 +93,7 @@ export function initPlay(params){
     };
 
     function showMoves(computerMove, myMove){
-        const result = state.whoWin(myMove, computerMove);
+        const resultado = state.whoWin(myMove, computerMove);
         const computerPlay = document.createElement("move-jugada");
         const myPlay = document.createElement("move-jugada");
         var containerEl = document.querySelector(".container");
@@ -109,13 +109,13 @@ export function initPlay(params){
         const intervalId = setInterval(() => {
             counter--
             if (counter == 0) {
-                if (result === "Gané") {
+                if (resultado === "Gané") {
                     params.goTo("/result/ganaste");
                 }
-                if (result === "Perdí") {
+                if (resultado === "Perdí") {
                     params.goTo("/result/perdiste");
                 }
-                if (result === "Empaté") {
+                if (resultado === "Empaté") {
                     params.goTo("/instructions");
                 }
                 clearInterval(intervalId);
